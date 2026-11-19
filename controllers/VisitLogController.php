@@ -13,7 +13,7 @@ class VisitLogController {
         Auth::privilege(1);     /*access only to administrator */
 
         $visitLog = new VisitLog;
-        $visits = (new VisitLog)->select('visit_date', 'DESC');      /*retrieves recorded visits */
+        $visits = (new VisitLog)->select('id', 'ASC');      /*retrieves recorded visits */
 
         return View::render('visitlog/index', ['visits' => $visits]);     /*sends visits to Twig */
     }
